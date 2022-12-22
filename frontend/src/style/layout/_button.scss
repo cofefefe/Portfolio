@@ -1,0 +1,15 @@
+.main{
+    &__button--signin, &__button--signup{
+        padding:17px;
+        border-radius:30px;
+        background-color:$primary-color;
+        border:none;
+        color:white;
+        width:200px;
+        transition:all 100ms ease-in;
+        font-size:25px;
+        &:hover{
+            background-color:$primary-color-hover;
+        }
+    }
+}
