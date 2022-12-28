@@ -1,5 +1,5 @@
 .main{
-    &__button--signin, &__button--signup{
+    &__button{
         padding:17px;
         border-radius:30px;
         background-color:$primary-color;
@@ -8,6 +8,13 @@
         width:200px;
         transition:all 100ms ease-in;
         font-size:25px;
+        &--secondary{
+            border:none;
+            background-color:$third-color;
+            &:hover{
+                background-color:$secondary-color-contrasted;
+            }
+        }
         &:hover{
             background-color:$primary-color-hover;
         }

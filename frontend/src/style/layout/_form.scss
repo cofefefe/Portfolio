@@ -1,0 +1,22 @@
+.form{
+    background-color:$primary-color;
+    border-radius:5px;
+    color:white;
+    span{
+        font-size:30px;
+        position:relative;
+        bottom:25px;
+        left:240px;
+        margin-bottom:-40px;
+        color:white;
+        max-width:30px;
+    }
+    input{
+        border-radius:5px;
+        border:none;
+        width:250px
+    }
+    &__input{
+        margin-bottom:15px;
+    }
+}

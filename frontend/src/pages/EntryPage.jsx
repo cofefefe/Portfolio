@@ -1,5 +1,7 @@
 import {Link, Navigate, useRouteLoaderData} from 'react-router-dom';
 import logo from '../assets/Logo_portfolio.webp'
+import Inscription from '../components/Inscription';
+import Connexion from '../components/Connexion';
 
 function EntryPage() {
 
@@ -13,9 +15,9 @@ function EntryPage() {
                     </Link>
                 </div>
                 <section className="main__entry d-flex justify-content-around align-items-center container mt-5 w-50">
-                    <button className="main__button--signin">Inscription</button>
+                    <Inscription/>
                         <img className="" src={logo}></img>
-                    <button className="main__button--signup">Connexion</button>
+                    <Connexion/>
                 </section>
                 <div className="main__precision text-center mt-5">
                     <p className="main__precision--text">Une fonctionnalité est mise en place pour l'inscription,<br/>
