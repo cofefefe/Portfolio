@@ -21,7 +21,7 @@ function Connexion() {
 
 
   return (
-    <div>
+    <div className="connexion">
       {/* Bouton "S'inscrire" qui affiche le formulaire lorsqu'il est cliqué */}
       {buttonVisible && (
         <button onClick={toggleForm} className="main__button">Connexion</button>

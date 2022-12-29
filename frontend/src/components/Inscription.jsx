@@ -18,7 +18,7 @@ function Inscription() {
   }
 
   return (
-    <div>
+    <div className="inscription">
       {/* Bouton "S'inscrire" qui affiche le formulaire lorsqu'il est cliqué */}
       {buttonVisible && (
         <button onClick={toggleForm} className="main__button">Inscription</button>
