@@ -1,0 +1,21 @@
+.summary{
+    background-color:$secondary-color;
+    position:relative;
+    top:50px;
+    max-width:559px!important;
+    padding:0;
+    border-radius:30px;
+    li{
+        list-style-type: none;
+        width:fit-content!important;
+        margin-left:20px;
+        margin-right:20px;
+        font-family:mukta_medium;
+        font-size:18px;
+        margin-top:10px;
+        padding-bottom:5px;
+    }
+    &__list{
+       
+    }
+}
