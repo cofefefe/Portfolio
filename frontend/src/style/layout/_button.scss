@@ -8,6 +8,8 @@
         width:200px;
         transition:all 100ms ease-in;
         font-size:25px;
+        font-family:mukta_regular, sans-serif;
+        letter-spacing:0.7px;
         &--secondary{
             border:none;
             background-color:$third-color;
@@ -28,6 +30,7 @@
         padding:10px;
         border-radius:30px;
         margin-right:30px;
+        font-family:mukta_regular, sans-serif;
         &:hover{
             background-color:$primary-color-hover;
         }
@@ -44,4 +47,8 @@
         }
     }
     
+}
+
+button{
+    font-family:mukta_regular, sans-serif;
 }
