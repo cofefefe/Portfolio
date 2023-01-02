@@ -38,7 +38,7 @@ function Contact() {
                                 < AiFillMail className="contact__icon"/> mathieu.baugard.dev@gmail.com
                             </li>
                             <li>
-                                < AiFillGithub className="contact__icon"/> https://github.com/cofefefe
+                                < AiFillGithub className="contact__icon"/> <a href="https://github.com/cofefefe?tab=repositories">Mon profil Github</a>
                             </li>
                         </ul>
                     </aside>

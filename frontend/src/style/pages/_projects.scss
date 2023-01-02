@@ -1,0 +1,64 @@
+
+.projects{
+    margin:0;
+    padding:0;
+    width:100%;
+    &__list{
+        &--card{
+            padding:10px;
+            border:1px solid rgb(104, 174, 192);
+            border-radius:30px;
+            margin-bottom:30px;
+            max-width:620px;
+            width:100%;
+            background-color:white;
+            cursor:pointer;
+        }
+    }
+    &__tools{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        text-align:center;
+        &--card{
+            width:150px;
+            margin:15px 10px;
+            border:1px solid rgb(104, 174, 192);
+            padding:10px;
+            border-radius:30px;
+            background-color:white;
+            &--html{
+                color:#FF7700;
+            }
+            &--css{
+                color:#4168E8;
+            }
+            &--js{
+                color:#E6B905
+            }
+            &--react{
+                color:#1676E3;
+            }
+            &--bt{
+                color:#7E19B8;
+            }
+            &--sass{
+                color:#C7256B;
+            }
+            &--git{
+                color:black;
+            }
+            &--mongo{
+                color:#12AA12;
+            }
+        }
+    }
+    .icon{
+        width:30px;
+        height:30px;
+    }
+}
+.last{
+    margin-bottom:58px;
+}
