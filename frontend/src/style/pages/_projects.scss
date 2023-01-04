@@ -23,6 +23,7 @@
         text-align:center;
         &--card{
             width:150px;
+            margin-bottom:58px;
             margin:15px 10px;
             border:1px solid rgb(104, 174, 192);
             padding:10px;
@@ -62,3 +63,13 @@
 .last{
     margin-bottom:58px;
 }
+
+
+//// test /////
+/// 
+#image1{
+    background-color:red;
+    min-width:640px;
+    min-height:879px;
+}
+
