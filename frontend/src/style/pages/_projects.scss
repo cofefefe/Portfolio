@@ -13,8 +13,12 @@
             width:100%;
             background-color:white;
             cursor:pointer;
+            p{
+                margin:0;
+            }
         }
     }
+    
     &__tools{
         display:flex;
         flex-direction:row;
@@ -68,8 +72,9 @@
 //// test /////
 /// 
 #image1{
-    background-color:red;
-    min-width:640px;
-    min-height:879px;
+    background:'../assets/projects/bookivisual.png';
+    width:100%;
+    max-height:879px;
+    transition:all ease 500ms;
 }
 
