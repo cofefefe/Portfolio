@@ -13,12 +13,11 @@ import panthere from '../assets/projects/Lapanthère.PNG'
 function Project({ name, image, onMouseEnter, onMouseLeave }) {
   return (
     <div
-      className="project"
+      className="projects"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <img src={image} alt={name} />
-      <p>{name}</p>
+      <p className="projects__list--card ">{name}</p>
     </div>
   );
 }
@@ -45,14 +44,14 @@ function Projects(name, image){
     {name: "Groupomania - Reseau social d'entreprise - React / Node", image: "image1.jpg" }
   ]
   const tools = [
-    {name: "HTML", image:<AiFillHtml5 className="projects__tools--card--html"/> },
-    {name: "CSS", image:<SiCss3 className="projects__tools--card--css"/>},
-    {name: "Bootstrap", image:<SiBootstrap className="projects__tools--card--bt"/> },
-    {name: "Javascript", image: <SiJavascript className="projects__tools--card--js"/> },
-    {name: "React", image: <SiReact className="projects__tools--card--react"/> },
-    {name: "SASS", image: <SiSass className="projects__tools--card--sass"/> },
-    {name: "Github", image: <AiFillGithub className="projects__tools--card--git"/> },
-    {name: "MongoDB", image: <SiMongodb className="projects__tools--card--mongo"/> }
+    {name: "HTML", image:<AiFillHtml5 className="projects__tools--card--html" key={0}/> },
+    {name: "CSS", image:<SiCss3 className="projects__tools--card--css" key={1}/>},
+    {name: "Bootstrap", image:<SiBootstrap className="projects__tools--card--bt" key={2}/> },
+    {name: "Javascript", image: <SiJavascript className="projects__tools--card--js" key={3}/> },
+    {name: "React", image: <SiReact className="projects__tools--card--react" key={4}/> },
+    {name: "SASS", image: <SiSass className="projects__tools--card--sass" key={5}/> },
+    {name: "Github", image: <AiFillGithub className="projects__tools--card--git" key={6}/> },
+    {name: "MongoDB", image: <SiMongodb className="projects__tools--card--mongo" key={7}/> }
   ]
   return (
     <>
@@ -60,9 +59,9 @@ function Projects(name, image){
       <main className="projects d-flex col-12 w-100 h-100 flex-row">
         <section className="projects__choice col-6 bg-light">
           <div className="projects__list d-flex justify-content-center flex-column align-items-center">
-            <h4 className="text-center mt-5 mb-5 col-6">
+            <h5 className="text-center mt-5 mb-4 col-6">
               Selectionnez un projet, et parcourez le sur github
-            </h4>
+            </h5>
             {projects.map((project) => (
               <Project
                 name={project.name}
@@ -80,7 +79,7 @@ function Projects(name, image){
             ))}
           </div>
         </section>
-        <section className="project__display col-6 bg-warning w-50 h-100">
+        <section className="projects__display col-6 w-50 h-100">
         <div
               style={{
                 flex: 1,
@@ -92,8 +91,7 @@ function Projects(name, image){
               {selectedProject && (
                 <img
                   src={selectedProject}
-                  alt="project"
-                  className="project-image"
+                  className="projects__image"
                 />
               )}
         </section>
