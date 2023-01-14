@@ -9,15 +9,17 @@ import booki from '../assets/projects/bookivisual.png'
 import kanap from '../assets/projects/Kanap.PNG'
 import omf from '../assets/projects/Ohmyfood.PNG'
 import panthere from '../assets/projects/Lapanthère.PNG'
+import piquante from '../assets/projects/piiquante.PNG'
+import groupomania from '../assets/projects/groupomania.PNG'
 
-function Project({ name, image, onMouseEnter, onMouseLeave }) {
+function Project({ name, image,href, onMouseEnter, onMouseLeave }) {
   return (
     <div
       className="projects"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <p className="projects__list--card ">{name}</p>
+      <p className="projects__list--card" href={href}><a href={href} style={{textDecoration:'none', color:'black'}}>{name}</a></p>
     </div>
   );
 }
@@ -28,7 +30,7 @@ function Tools({name, image}){
   return(
     <>
     <div className="projects__tools--card d-flex justify-content-between align-items-center">
-        {name + image}
+        {name} {image}
     </div>
     </>
   )
@@ -36,12 +38,12 @@ function Tools({name, image}){
 function Projects(name, image){
   const [selectedProject, setSelectedProject] = useState(null)
   const projects = [
-    {name: "Booki - Intégration d'une maquette - HTML / CSS", image:booki },
-    {name: "OhMyFood - Animation - CSS", image:omf },
-    {name: "La Panthère - Audit & optimisation SEO - HTML / CSS", image:panthere },
-    {name: "Kanap - Site e-commerce dynamique - HTML / CSS / JS", image:kanap },
-    {name: "Piiquante - Backend ( inscription, post ) - Node / JS", image: "image1.jpg" },
-    {name: "Groupomania - Reseau social d'entreprise - React / Node", image: "image1.jpg" }
+    {name: "Booki - Intégration d'une maquette - HTML / CSS", image:booki, href:"https://user.oc-static.com/upload/2022/04/07/16493434697192_Desktop%20-%201.png" },
+    {name: "OhMyFood - Animation - CSS", image:omf, href:"https://github.com/cofefefe/Baugard_Mathieu_P03_OHF_20-04-22" },
+    {name: "La Panthère - Audit & optimisation SEO - HTML / CSS", image:panthere, href:"https://github.com/cofefefe/Baugard_Mathieu_Projet04_laPanth-re" },
+    {name: "Kanap - Site e-commerce dynamique - HTML / CSS / JS", image:kanap, href:"https://github.com/cofefefe/P5_Baugard_Mathieu_Kanap" },
+    {name: "Piiquante - Backend ( inscription, post ) - Node / JS", image:piquante, href:"https://github.com/cofefefe/P06_Piiquante_Baugard" },
+    {name: "Groupomania - Reseau social d'entreprise - React / Node", image:groupomania, href:"https://github.com/cofefefe/Groupomania_Baugard_010922" }
   ]
   const tools = [
     {name: "HTML", image:<AiFillHtml5 className="projects__tools--card--html" key={0}/> },
@@ -57,7 +59,7 @@ function Projects(name, image){
     <>
       <Nav />
       <main className="projects d-flex col-12 w-100 h-100 flex-row">
-        <section className="projects__choice col-6 bg-light">
+        <section className="projects__choice col-lg-6 bg-light col-12">
           <div className="projects__list d-flex justify-content-center flex-column align-items-center">
             <h5 className="text-center mt-5 mb-4 col-6">
               Selectionnez un projet, et parcourez le sur github
@@ -65,6 +67,7 @@ function Projects(name, image){
             {projects.map((project) => (
               <Project
                 name={project.name}
+                href={project.href}
                 onMouseEnter={() => setSelectedProject(project.image)}
                 onMouseLeave={() => setSelectedProject(null)}
               />
@@ -80,14 +83,7 @@ function Projects(name, image){
           </div>
         </section>
         <section className="projects__display col-6 w-50 h-100">
-        <div
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            />
+        <div/>
               {selectedProject && (
                 <img
                   src={selectedProject}
