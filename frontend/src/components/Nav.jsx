@@ -9,7 +9,7 @@ function Nav() {
                     <p className="nav__name">Mathieu<br/>Baugard</p>
                 </div>
                 <div className="nav__right d-flex">
-                    <button className="nav__button">Télécharger CV</button>
+                    <a href="../assets/cvzip" download className="nav__button" >Télécharger CV</a>
                     <button className="nav__button">Déconnexion</button>
                 </div>
         </nav>

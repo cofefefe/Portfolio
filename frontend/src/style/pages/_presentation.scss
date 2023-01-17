@@ -47,3 +47,81 @@
         font-size:20px;
     }
 }
+
+.card{
+    background-color:$nav-color!important;
+    width:80%;
+    color:white;
+    margin:auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition:300ms ease-in-out all;
+    padding:20px;
+    p{
+        font-family: mukta_regular,sans-serif;
+    }
+    h5{
+        font-family: playfair_medium,sans-serif;
+    }
+    &__titles{
+        border-bottom: 0.5px solid white;
+        width:fit-content;
+        margin:auto;
+        padding-bottom:5px;
+        padding-top:15px;
+    }
+    &__text{
+        text-align: justify;
+        padding:20px;
+    }
+    &__mamad{
+        float:right;
+        width:280px;
+        height:auto;
+    }
+    &__fm{
+        float:right;
+        padding:20px;
+        width:150px;
+    }
+    &__paradox{
+        float:left;
+        width:120px;
+        padding:20px;
+    }
+    &__civ{
+        float:right;
+        padding:20px;
+        width:200px;
+    }
+    &__icons{
+        &--wordpress, &--php, &--node, &--react{
+            width:80px;
+            padding:10px;
+            height:auto;
+            margin: 0 10px 0 10px;
+        }
+        &--wordpress{
+            color:rgb(56, 101, 248);
+        }
+        &--php{
+            color:rgb(148, 146, 252);
+        }
+        &--react{
+            color:rgb(0, 195, 255);
+        }
+        &--node{
+            color:rgb(108, 230, 108);
+        }
+    }
+    li{
+        list-style-type: none;
+        margin-top:40px;
+    }
+}
+
+@media (max-width:1100px) {
+    .card{
+        display:flex;
+        flex-direction:column;
+    }
+}
