@@ -1,9 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Nav from '../components/Nav';
 import {AiFillWarning} from 'react-icons/ai'
+import { addPost, getPosts } from '../utils/apicalls';
+import { UserContext } from '../utils/userContext';
 
 function Goldenbook() {
-    return(
+    const [content, setContent] = useState('')
+    const [posts, setPosts] = useState([]);
+    const [user] = useContext(UserContext);
+
+
+
+    const refreshPosts = () => {
+        getPosts().then((postsResult) => {
+            setPosts(postsResult)
+        })
+    }
+
+    const createPost = (req,res,next) => {
+        let params = {
+            post: {
+                content:content,
+                poster: user.pseudo
+            },
+        }
+        addPost(params).then(function () {
+            console.log('on add post dans golden book')
+            refreshPosts()
+        });
+    }
+        return(
         <>
             <Nav />
             <main className="goldenbook d-flex justify-content-around">
@@ -14,8 +40,8 @@ function Goldenbook() {
                     </div>
                     <aside className="goldenbook__sending--write d-flex flex-column mt-5 align-items-center">
                         <h4 className="mb-4">Votre message pour le livre d'or</h4>
-                        <textarea rows="13"></textarea>
-                        <button className=" goldenbook__sending--button mt-3">Envoyer</button>
+                        <textarea rows="13" onChange={(e)=>{setContent(e.target.value)}}></textarea>
+                        <button className=" goldenbook__sending--button mt-3" onClick={createPost}>Envoyer</button>
                     </aside>
                 </div>
                 <section className="goldenbook__msg mt-5">

@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import Nav from '../components/Nav';
 import Summary from '../components/Summary'
 import profilpic from '../assets/profil_pic.webp'
+import { UserContext } from '../utils/userContext'
+import { useContext} from "react";
+
 
 function Homepage() {
+    const [user] = useContext(UserContext);
+
     return(
         <>
         <Nav />
@@ -12,7 +17,7 @@ function Homepage() {
         </section>
         <div className="homepage__main d-flex justify-content-around">
                 <img className="homepage__img" src={profilpic} alt="Photo de Mathieu Baugard sur un fond de bureau"/>
-            <aside className="homepage__profile">   <p className="text-justify">Bienvenue sur mon Porfolio *PSEUDO* !<br/>
+            <aside className="homepage__profile">   <p className="text-justify">Bienvenue sur mon Porfolio {user.pseudo} !<br/>
                                                     Ce site a entièrement été réalisé de ma main en utilisant divers outils.<br/>
                                                     Le backend a été réalisé en JavaScript grâce au runtime Node et une
                                                     base de donnée noSQL ( MongoDB ).<br/>

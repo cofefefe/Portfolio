@@ -9,11 +9,30 @@ import Goldenbook from './pages/Goldenbook'
 import Presentation from './pages/Presentation'
 import Projects from './pages/Projects'
 
+import {userAuth} from "./utils/apicalls";
+import {UserContext} from "./utils/userContext";
+import{ useState, useEffect} from 'react'
 
 function App() {
+    const [user, setUser] = useState({});
+
+
+    useEffect(() => {
+        userAuth().then((user) => {
+            if (user && user["_id"]) {
+                setUser(user);
+            } else {
+                setUser(null);
+                localStorage.removeItem('token');
+
+            }
+        });
+    }, []);
+
 
     return (
         <>
+            <UserContext.Provider value={[user, setUser]}>
                 <Router>
                     <Routes>
                         <Route path='/' element={<EntryPage/>}/>
@@ -24,6 +43,7 @@ function App() {
                         <Route path='/projects' element={<Projects/>}/>
                     </Routes>
                 </Router>
+            </UserContext.Provider>
         </>
     );
 }
