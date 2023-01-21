@@ -52,7 +52,7 @@ export async function userAuth() {
 
 // retrieve articles
 export function getPosts(params){
-    console.log(params)
+
     return fetch('http://localhost:4000/api/post',{
         method:'GET',
         headers:{ 'Content-Type': 'application/json; charset=utf-8; image/pgn; image/jpg', 'Authorization': localStorage.getItem('token')}
@@ -65,24 +65,45 @@ export function getPosts(params){
     })
 }
 
-// add article
+// export function addPost(params){
+
+//     console.log(params)
+//     let data = new FormData()
+//     data.append('post', JSON.stringify(params.post))
+//     // data.append('content', params.post.content)
+//     // data.append('poster', params.post.poster)
+    
+//     // console.log('poster', params.post.poster)
+//     // console.log('content', params.post.content)
+//     console.log('post', JSON.stringify(params.post))
+
+//     return fetch('http://localhost:4000/api/post/add',{
+//         method:'POST',
+//         body: JSON.stringify(data),
+//         headers:{'Content-Type': 'application/json; charset=utf-8', 'Authorization': localStorage.getItem('token')}
+//     })
+//     .then(function(res){
+//         console.log('dans le then')
+//         return res.json()
+//     })
+//     .catch(function(err){
+//         console.log('dans le catch   '+ err)
+//     })
+// }
+
 export function addPost(params){
-    let data = new FormData()
-    data.append('poster', JSON.stringify(params.post.poster))
-    data.append('content', params.post.content)
-    console.log('add post de l api')
-    return fetch('http://localhost:4000/api/posts',{
+    console.log(params)
+    return fetch('http://localhost:4000/api/post', {
         method:'POST',
-        body: data,
-        headers:{'Authorization': localStorage.getItem('token')}
+        body:params,
+        headers:{'Authorization' : localStorage.getItem('token')}
     })
     .then(function(res){
-        console.log('reussite' + res)
+        console.log(res.json())
         return res.json()
     })
     .catch(function(err){
-        console.log('echec' + err)
-        console.log(err)
+        console.log('dans le catch ==>' + err)
     })
 }
 

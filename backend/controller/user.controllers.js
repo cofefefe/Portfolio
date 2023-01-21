@@ -18,8 +18,7 @@ module.exports.signUp = async (req,res) =>{
             pseudo: pseudo,
             email: email,
             password: hash,
-        })
-        
+        })     
         user.save()
             .then(() => {
                 return res.status(201).json({ message: "utilisateur créé !"})

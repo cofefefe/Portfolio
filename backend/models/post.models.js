@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const postSchema = mongoose.Schema({
-    poster: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    poster: { type: String },
     content: { type: String, trim: true, maxlenght: 500 }},
 {
     timestamps:true

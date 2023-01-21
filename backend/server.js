@@ -11,6 +11,7 @@ const Users = require("./models/user.models");
 
 // server
 const app = express()
+
 app.listen(process.env.PORT, () =>{
     console.log(`Listening on port ${process.env.PORT}`)
 })
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+
 // Retrieve request's body
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))

@@ -17,15 +17,14 @@ function Goldenbook() {
         })
     }
 
-    const createPost = (req,res,next) => {
+    const createPost = () => {
         let params = {
             post: {
                 content:content,
                 poster: user.pseudo
-            },
+            }
         }
         addPost(params).then(function () {
-            console.log('on add post dans golden book')
             refreshPosts()
         });
     }
