@@ -11,8 +11,8 @@ exports.getPosts = async (req, res, next) => {
     }
 }
 
-exports.savePost = async (req, res, next, params)=>{
+exports.savePost = async (req, res, next)=>{
     console.log("aaaaaaaa");
-  const result = { test: "Aaaa" };
-  res.send(result);
+    const result = { test: "Aaaa" };
+    res.send(result);
 }
