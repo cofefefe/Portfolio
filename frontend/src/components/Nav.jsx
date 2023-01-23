@@ -29,7 +29,7 @@ function Nav() {
                         <p className="nav__name">Mathieu<br/>Baugard</p>
                     </div>
                     <div className="nav__right d-flex">
-                        <a href="/cv.png" download className="nav__button" >Télécharger CV</a>
+                            <button download className="nav__button" >Télécharger CV</button>
                         <button className="nav__button" onClick={disconnectUser} >Déconnexion</button>
                     </div>
             </nav>

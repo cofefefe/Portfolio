@@ -61,7 +61,7 @@ export function getPosts(params){
         return res.json()
     })
     .catch(function(err){
-        console.log(err)
+        console.log('catch getPost ' + err)
     })
 }
 
@@ -92,14 +92,13 @@ export function getPosts(params){
 // }
 
 export function addPost(params){
-    console.log(params)
+
     return fetch('http://localhost:4000/api/post', {
         method:'POST',
-        body:params,
-        headers:{'Authorization' : localStorage.getItem('token')}
+        body: JSON.stringify(params),
+        headers:{'Content-Type': 'application/json', 'Authorization' : localStorage.getItem('token')}
     })
     .then(function(res){
-        console.log(res.json())
         return res.json()
     })
     .catch(function(err){
