@@ -1,16 +1,16 @@
-import react from 'react'
+import React from "react"
 
-function ContactForm(){
-    return(
-        <div className="sendmail">
-            <form
-        name="contact"
+function ContactForm() {
+  return (
+    <div className="sendmail">
+      <form
+        name="sendmail"
         method="post"
-        className="contact__form"
+        className="sendmail__form"
         data-netlify="true"
         onSubmit="submit"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="sendmail" />
         <label for="name">Nom: </label>
         <input type="text" name="name" />
 
@@ -22,8 +22,9 @@ function ContactForm(){
 
         <button type="submit">Envoyer</button>
       </form>
-        </div>
-    )
+      ,
+    </div>
+  )
 }
 
 export default ContactForm
