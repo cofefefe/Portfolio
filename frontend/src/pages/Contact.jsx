@@ -6,6 +6,8 @@ import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillMail } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
 
+import Contactform from '../components/Contactform'
+
 function Contact() {
     return(
         <>
@@ -15,15 +17,7 @@ function Contact() {
                     <aside className="contact__sending">
                         <h3 className="contact__sending--title">Vous souhaitez me contacter ? </h3><br/>
                         <p>Envoyez moi un mail !  </p>
-                        <form action="/send-message" method="post">
-                            <label for="name">Nom :</label><br/>
-                                <input type="text" id="name" name="name"/><br/>
-                            <label for="email">Email :</label><br/>
-                                <input type="email" id="email" name="email"/><br/>
-                            <label for="message">Message :</label><br/>
-                                <textarea id="message" name="message" rows="8"></textarea><br/>
-                            <input type="submit" value="Envoyer le message"/>
-                        </form>
+                        <Contactform />
                     </aside>
                     <aside className="contact__info">
                         <h3 className="contact__info--title">Contact</h3>

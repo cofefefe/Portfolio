@@ -65,32 +65,6 @@ export function getPosts(params){
     })
 }
 
-// export function addPost(params){
-
-//     console.log(params)
-//     let data = new FormData()
-//     data.append('post', JSON.stringify(params.post))
-//     // data.append('content', params.post.content)
-//     // data.append('poster', params.post.poster)
-    
-//     // console.log('poster', params.post.poster)
-//     // console.log('content', params.post.content)
-//     console.log('post', JSON.stringify(params.post))
-
-//     return fetch('http://localhost:4000/api/post/add',{
-//         method:'POST',
-//         body: JSON.stringify(data),
-//         headers:{'Content-Type': 'application/json; charset=utf-8', 'Authorization': localStorage.getItem('token')}
-//     })
-//     .then(function(res){
-//         console.log('dans le then')
-//         return res.json()
-//     })
-//     .catch(function(err){
-//         console.log('dans le catch   '+ err)
-//     })
-// }
-
 export function addPost(params){
 
     return fetch('http://localhost:4000/api/post', {
@@ -105,4 +79,5 @@ export function addPost(params){
         console.log('dans le catch ==>' + err)
     })
 }
+
 

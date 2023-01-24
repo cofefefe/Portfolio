@@ -31,7 +31,6 @@ function App() {
 
 
     return (
-        <>
             <UserContext.Provider value={[user, setUser]}>
                 <Router>
                     <Routes>
@@ -43,9 +42,8 @@ function App() {
                         <Route path='/projects' element={<Projects/>}/>
                     </Routes>
                 </Router>
-            </UserContext.Provider>
-        </>
-    );
+            </UserContext.Provider> 
+        );
 }
 
 

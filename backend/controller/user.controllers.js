@@ -78,3 +78,6 @@ exports.auth = (req, res, next) => {
     }
 }
 
+exports.test=(req,res,next)=>{
+    console.log(req)
+}

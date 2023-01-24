@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/Logo_nav.PNG'
 import {useNavigate} from 'react-router-dom';
-
+import axios from 'axios'
 
 
 function Nav() {
-
     const navigate = useNavigate()
+    // Managing file downloading
 
+
+    // Managing navigation by client
     function disconnectUser(){
         localStorage.removeItem('token')
         navigate('/')
     }
-
     function navigateToMenu(){
         navigate('/')
     }
-
     function navigateToMainPage(){
         navigate('/homepage')
     }
     
+    // if user is connected display a log out button
     if(localStorage.getItem('token')){
         return(
             <nav className="nav container-fluid d-flex justify-content-between">
@@ -29,12 +30,15 @@ function Nav() {
                         <p className="nav__name">Mathieu<br/>Baugard</p>
                     </div>
                     <div className="nav__right d-flex">
-                            <button download className="nav__button" >Télécharger CV</button>
+                            <button className="nav__button" >
+                                Téléchargement CV
+                            </button>
                         <button className="nav__button" onClick={disconnectUser} >Déconnexion</button>
                     </div>
             </nav>
         )
     }
+    // if user is not connected, replace logout button by a "menu" button
     if(!localStorage.getItem('token')){
         return(
             <nav className="nav container-fluid d-flex justify-content-between">
