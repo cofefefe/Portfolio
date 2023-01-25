@@ -132,7 +132,7 @@ function Presentation (){
         <>
         <Nav />
         <section className="presentation">
-            <div className="presentation__nav d-flex justify-content-around">
+            <div className="presentation__nav d-flex justify-content-around flex-wrap">
                 <button onClick={() => handleClick('Biography')} className="presentation__nav--bio d-flex mt-5 align-items-center">  
                     <p className="m-0">Biographie</p>
                     <FaFeatherAlt />

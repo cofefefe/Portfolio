@@ -28,6 +28,7 @@
         padding:20px;
         border-radius:10%;
         margin-top:10%;
+        margin-left:20px;
     }
     &__msg{
         justify-content:space-around;
@@ -53,12 +54,44 @@
     &__info{
         min-width:420px;
         &--title{
-            margin-bottom:50px;
+            margin-bottom:10px;
             text-align:center;
         }
     }
     a{
         text-decoration:none;
         color:white;
+    }
+    &__dot{
+        background-color:$nav-color;
+        padding:20px;
+        border-radius:20px;
+        margin-top:30px;
+        &--column{
+            margin-top:20px;
+        }
+        &--img{
+            width:500px;
+            height:auto;
+            border-radius:20px;
+        }
+        &--img2{
+            width:140px;
+            height:auto;
+            border-radius:20px;
+        }
+        &--img3{
+            width:330px;
+            border-radius:20px;
+            height:auto;
+        }
+    }
+}
+
+@media (max-width:982px) {
+    .contact{
+        &__dot{
+            display:none;
+        }
     }
 }
