@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../assets/Logo_nav.PNG'
+import React from 'react';
+import logo from '../assets/Logo_nav.PNG';
 import {useNavigate} from 'react-router-dom';
-import axios from 'axios'
-
 
 function Nav() {
     const navigate = useNavigate()
